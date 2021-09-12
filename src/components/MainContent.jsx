@@ -5,12 +5,12 @@ import {MadLibsForm} from "./MadLibsForm";
 export function MainContent() {
     const [answers, setAnswers] = useState({answersEntered: false})
 
-
     return(
         <div>
-        {(answers.answersEntered) ? <MadLibsResult answers={answers}/> : <MadLibsForm answers={answers} setAnswers={setAnswers}/> }
+        {(answers.answersEntered) ?
+            <MadLibsResult answers={answers}/> :
+            <MadLibsForm answers={answers} setAnswers={setAnswers}/>
+        }
         </div>
     )
-
-
 }

@@ -49,12 +49,28 @@ export function MadLibsForm({answers, setAnswers}) {
 
     return (
         <section  className={'form'}>
-                <h2>Enter Your Choices!</h2>
-            <table><tbody>
-            {sections.map((section) => {
-               return (<tr key={section}><td>Please write {startsWithVowel(section) ? "an" : "a"} {section}:</td><td><input name={section} id={section} type='text' value={answers[section]} onChange={handleChange} /></td></tr>)
-            })}</tbody>
+            <h2>Enter Your Choices!</h2>
+            <table>
+                <tbody>
+                {sections.map((section) => {
+                    return (
+                        <tr key={section}>
+                            <td>Please write {startsWithVowel(section) ? "an" : "a"} {section}:</td>
+                            <td>
+                                <input
+                                    name={section}
+                                    id={section}
+                                    type='text'
+                                    value={answers[section]}
+                                    onChange={handleChange} />
+                            </td>
+                        </tr>)})}
+                </tbody>
             </table>
-            <button disabled={!validForm} onClick={handleClick} style={{marginTop: '1rem'}}>Complete</button></section>
+            <button
+                disabled={!validForm}
+                onClick={handleClick}
+                style={{marginTop: '1rem'}}>Complete</button>
+        </section>
     )
 }
